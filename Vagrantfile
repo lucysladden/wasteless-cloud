@@ -77,11 +77,57 @@ Vagrant.configure("2") do |config|
     end
   
     # Enable provisioning with a shell script. Additional provisioners such as
-    # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
-    # documentation for more information about their specific syntax and use.
-    # config.vm.provision "shell", inline: <<-SHELL
-    #   apt-get update
-    #   apt-get install -y apache2
-    # SHELL
+  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
+  # documentation for more information about their specific syntax and use.
+  
+  # Instead of configuring the VM using the default template from runnning
+  # Vagrant init, we are configuring one using the method shown in David's
+  # Vagrant file for his multiple VMs.
+  config.vm.define "publicwebserver" do |publicwebserver|
+    publicwebserver.vm.hostname = "publicwebserver"
+    
+    # Provisioning commands for shell.
+    # This allows the apache server to be created and gets all of the appropriate
+    # configuration tools to run from the .conf file in the same directory
+    publicwebserver.vm.provision "shell", inline: <<-SHELL
+      apt-get update
+      apt-get install -y apache2 php libapache2-mod-php php-mysql
+      # Covering ourselves incase php unsuccessfully installs
+      apt-get install php-mysql
+      # Change VM's webserver's config to use shared folder and 
+      # look inside wasteless.conf
+      cp /vagrant/wasteless.conf /etc/apache2/sites-available/
+      # activate wasteless configuration
+      a2ensite wasteless
+      # disable default website provided with Apache
+      a2dissite 000-default
+      # restart webserver to get all of our website configurations
+      service apache2 restart
+    SHELL
+  end
+  
+  config.vm.define "adminserver" do |adminserver|
+    # Naming the admin server
+    adminserver.vm.hostname = "adminserver"
+
+    # Provisioning commands for shell.
+    # This allows the apache server to be created and gets all of the appropriate
+    # configuration tools to run from the .conf file in the same directory
+    adminserver.vm.provision "shell", inline: <<-SHELL
+      apt-get update
+      apt-get install -y apache2 php libapache2-mod-php php-mysql
+      # Covering ourselves incase php unsuccessfully installs
+      apt-get install php-mysql
+      # Change VM's webserver's config to use shared folder and 
+      # look inside wasteless.conf
+      cp /vagrant/admin.conf /etc/apache2/sites-available/
+      # activate wasteless configuration
+      a2ensite admin
+      # disable default website provided with Apache
+      a2dissite 000-default
+      # restart webserver to get all of our website configurations
+      service apache2 restart
+    SHELL
+  end
   end
   
