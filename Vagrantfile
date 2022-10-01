@@ -61,7 +61,7 @@ Vagrant.configure("2") do |config|
     # they should be comma-separated (if you use more than one) within
     # square brackets.
     #
-    aws.security_groups = ["sg-035027b005372f36f"]
+    aws.security_groups = ["sg-035027b005372f36f", "sg-0d98ee4e4923b33d3"]
 
     # For Vagrant to deploy to EC2 for Amazon Educate accounts, it
     # seems that a specific availability_zone needs to be selected
@@ -94,6 +94,7 @@ Vagrant.configure("2") do |config|
   # Instead of configuring the VM using the default template from runnning
   # Vagrant init, we are configuring one using the method shown in David's
   # Vagrant file for his multiple VMs.
+  
   config.vm.define "publicwebserver" do |publicwebserver|
     publicwebserver.vm.hostname = "publicwebserver"
 
@@ -116,6 +117,7 @@ Vagrant.configure("2") do |config|
       service apache2 reload
     SHELL
   end
+  
 
   config.vm.define "adminserver" do |adminserver|
     # Naming the admin server
