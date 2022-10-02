@@ -1,8 +1,8 @@
 <?php
 $db_host   = 'wasteless-db.c5gqzhqioi48.us-east-1.rds.amazonaws.com';
-$db_name   = 'wastelessdb';
-$db_user   = 'webuser';
-$db_passwd = 'wastelessdb_pw';
+$db_name   = 'wasteless-db';
+$db_user   = 'admin';
+$db_passwd = 'password1#';
 
 $pdo_dsn = "mysql:host=$db_host;dbname=$db_name";
 
@@ -12,6 +12,6 @@ if (isset($_POST['delete'])) {
     if (isset($conn)) {
         $error = $conn->query($deleteQuery);
     }
-    header("Location: admin.php");
+    header("Location: index.php");
     exit;
 }

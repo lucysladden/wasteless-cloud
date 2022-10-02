@@ -20,9 +20,9 @@
 
     $query = "INSERT INTO leftovers(restaurant_name,address,description,price,latest_collection) VALUES (" . "'" . $name . "'" . "," . "'" . $address . "'" . "," . "'" . $description . "'" . "," . "'" . $price . "'" . "," . "'" . $timeframe . "'" . ");";
     $db_host   = 'wasteless-db.c5gqzhqioi48.us-east-1.rds.amazonaws.com';
-    $db_name   = 'wastelessdb';
-    $db_user   = 'webuser';
-    $db_passwd = 'wastelessdb_pw';
+    $db_name   = 'wasteless-db';
+    $db_user   = 'admin';
+    $db_passwd = 'password1#';
 
     $pdo_dsn = "mysql:host=$db_host;dbname=$db_name";
 
@@ -30,9 +30,7 @@
 
     $result = $conn->query($query);
 
-    ?>
-
-
+    ?> 
 
 
     <h1>Food Donation Form</h1>
@@ -81,10 +79,3 @@
 </body>
 
 </html>
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
