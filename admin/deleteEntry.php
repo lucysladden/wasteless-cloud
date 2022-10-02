@@ -1,5 +1,5 @@
 <?php
-$db_host   = '192.168.56.13';
+$db_host   = 'wasteless-db.c5gqzhqioi48.us-east-1.rds.amazonaws.com';
 $db_name   = 'wastelessdb';
 $db_user   = 'webuser';
 $db_passwd = 'wastelessdb_pw';
