@@ -1,6 +1,6 @@
 <?php
-$db_host   = 'wasteless-db.c5gqzhqioi48.us-east-1.rds.amazonaws.com';
-$db_name   = 'wasteless-db';
+$db_host   = 'wasteless-db-2.cqfifwed6h5w.us-east-1.rds.amazonaws.com';
+$db_name   = 'wasteless-schema';
 $db_user   = 'admin';
 $db_passwd = 'password1#';
 
