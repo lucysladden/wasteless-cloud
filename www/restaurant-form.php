@@ -27,8 +27,9 @@
     $pdo_dsn = "mysql:host=$db_host;dbname=$db_name";
 
     $conn = new PDO($pdo_dsn, $db_user, $db_passwd);
-
-    $result = $conn->query($query);
+    if (isset($_POST['Submit'])){
+      $result = $conn->query($query);
+    }
 
     ?> 
 
@@ -68,7 +69,7 @@
         </tr>
         <tr>
           <td>
-            <input type="submit" value="Submit" />
+            <input type="submit" name="Submit" value="Submit" />
           </td>
         </tr>
       </table>
