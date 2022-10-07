@@ -8,6 +8,6 @@ Clients open the public-facing web page at http://ec2-3-239-0-61.compute-1.amazo
 
 Administrators can open the admin web page at http://ec2-3-238-23-152.compute-1.amazonaws.com/index.php and delete leftover food entries.
 
-If you wish to build this yourself, you will need your own AWS account and will have to set up up the environment variables such as security groups and an AMI, and an RDS MySQL database. The vagrant file will need to be altered to reflect these changes. Following this, you can build the VMs by running 'vagrant up --provider=aws'. 
+If you wish to build this yourself, you will need your own AWS account and will have to set up up the environment variables such as security groups and an AMI, and an RDS MySQL database. The Vagrantfile will need to be altered to reflect these changes. Following this, you can build the VMs by running 'vagrant up --provider=aws'. 
 
 Extending the capability of this web app is limited only by the AWS tools at your disposal. For example, you could use SNS to send a notification to subscribed users every time the submit button is clicked on the public page.
