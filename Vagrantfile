@@ -140,6 +140,14 @@ Vagrant.configure("2") do |config|
       a2dissite 000-default
       # restart webserver to get all of our website configurations
       service apache2 reload
+
+      sudo apt-get install -y php5-cli curl > /dev/null
+
+      curl -Ss https://getcomposer.org/installer | php > /dev/null
+      
+      sudo mv composer.phar /usr/bin/composer
+
+
     SHELL
   end
 end
