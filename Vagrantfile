@@ -61,7 +61,7 @@ Vagrant.configure("2") do |config|
     # they should be comma-separated (if you use more than one) within
     # square brackets.
     #
-    aws.security_groups = ["sg-035027b005372f36f", "sg-0d98ee4e4923b33d3"]
+    aws.security_groups = ["sg-0a5976ee3bd1ff2dc", "sg-069021debf9a2cb63"]
 
     # For Vagrant to deploy to EC2 for Amazon Educate accounts, it
     # seems that a specific availability_zone needs to be selected
@@ -69,7 +69,7 @@ Vagrant.configure("2") do |config|
     # availability_zone needs to be included, too (will be of the form
     # "subnet-...").
     aws.availability_zone = "us-east-1f"
-    aws.subnet_id = "subnet-022ba96bbe8f589f0"
+    aws.subnet_id = "subnet-0a346e5b218f7a9f9"
 
     # You need to chose the AMI (i.e., hard disk image) to use. This
     # will be of the form "ami-...".

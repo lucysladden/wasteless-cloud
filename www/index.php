@@ -7,7 +7,7 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Waste Less.</h1>
+    <img src="https://wasteless-bucket-2.s3.amazonaws.com/584a78e9d7b14d20892cb09d150bb61b.png" alt="Wasteless Logo">
     <h3>Social impact through reducing food waste.</h3>
     <a href="/restaurant-form.php">For Restauraunts</a>
     <a href="/customer.php">For Customers</a>
