@@ -69,7 +69,7 @@
         </tr>
         <tr>
           <td>
-            <input type="submit" name="Submit" value="Submit" />
+            <input type="submit" name="Submit" value="Submit" onclick="return confirm('Are you sure you want to submit?');"/>
           </td>
         </tr>
       </table>
